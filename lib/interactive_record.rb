@@ -58,7 +58,7 @@ class InteractiveRecord
     FROM #{self.table_name}
     WHERE ? = ?
     SQL
-    DB[:conn].execute(sql, attributes.keys.first, attributes[attributes.keys[0]])
+    DB[:conn].execute(sql, attributes.keys.first.to_s, attributes[attributes.keys[0]].to_s)
   end
 
   def self.column_names
