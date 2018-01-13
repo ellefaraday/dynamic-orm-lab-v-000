@@ -60,9 +60,9 @@ class InteractiveRecord
     sql = <<-SQL
     SELECT *
     FROM #{self.table_name}
-    WHERE ? = ?
+    WHERE #{col_name} = #{value}
     SQL
-    DB[:conn].execute(sql, col_name, value)
+    DB[:conn].execute(sql)
   end
 
   def self.column_names
