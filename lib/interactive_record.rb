@@ -5,7 +5,7 @@ class InteractiveRecord
 
   def initialize(attributes={})
     attributes.each do |key, value|
-      self.send("#{key}", value) unless key == "id"
+      self.send("#{key}=", value) unless 
     end
   end
 
