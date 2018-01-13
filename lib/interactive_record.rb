@@ -18,7 +18,11 @@ class InteractiveRecord
   end
 
   def col_names_for_insert
-    self.class.column_names.delete("id")
+    self.class.column_names.delete("id").join(", ")
+  end
+
+  def values_for_insert
+  end
 
   def self.column_names
     table_info = DB[:conn].execute("PRAGMA table_info('#{self.table_name}')")
