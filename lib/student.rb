@@ -4,7 +4,6 @@ require 'interactive_record.rb'
 
 class Student < InteractiveRecord
 
-  def self.attr_accessor
     self.column_names.each do |column_name|
       if column_name == "id"
         attr_reader column_name.to_sym
@@ -12,6 +11,6 @@ class Student < InteractiveRecord
         attr_accessor column_name.to_sym
       end
     end
-  end
+
 
 end
