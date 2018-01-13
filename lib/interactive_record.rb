@@ -19,7 +19,7 @@ class InteractiveRecord
 
   def col_names_for_insert
     columns = self.class.column_names.delete("id")
-    column.join(", ")
+    columns.join(", ")
   end
 
   def values_for_insert
