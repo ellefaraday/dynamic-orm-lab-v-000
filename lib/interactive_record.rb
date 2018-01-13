@@ -32,6 +32,14 @@ class InteractiveRecord
     values.join(", ")
   end
 
+  def save
+  end
+
+  def self.find_by_name(name)
+  end
+
+  def self.find_by(attribute, value)
+  end
 
   def self.column_names
     table_info = DB[:conn].execute("PRAGMA table_info('#{self.table_name}')")
