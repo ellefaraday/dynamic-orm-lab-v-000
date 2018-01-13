@@ -6,7 +6,11 @@ class Student < InteractiveRecord
 
   def self.attr_accessor
     self.column_names.each do |column_name|
-      attr_accessor column_name.to_sym
+      if column_name == "id"
+        attr_reader column_name.to_sym
+      else
+        attr_accessor column_name.to_sym
+      end
     end
   end
 
