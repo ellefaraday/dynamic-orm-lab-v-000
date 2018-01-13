@@ -29,7 +29,7 @@ class InteractiveRecord
     end
     values.join(", ")
   end
-  end
+
 
   def self.column_names
     table_info = DB[:conn].execute("PRAGMA table_info('#{self.table_name}')")
