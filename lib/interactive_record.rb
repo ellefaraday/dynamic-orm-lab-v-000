@@ -13,6 +13,10 @@ class InteractiveRecord
     self.to_s.pluralize.downcase
   end
 
+  def table_name_for_insert
+    self.class.table_name
+  end
+
   def self.column_names
     table_info = DB[:conn].execute("PRAGMA table_info('#{self.table_name}')")
 
